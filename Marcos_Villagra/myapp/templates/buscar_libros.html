@@ -1,0 +1,17 @@
+{% {% extends "base.html" %}}
+
+{% block title %}Buscar libros{% endblock %}
+
+{% block header %}Buscar libros{% endblock %}
+
+{% block content %}
+    <form method="get">
+        {{ form.as_p}}
+        <button type="submit">Buscar</button>
+    </form>
+    <ul>
+        {% for libro in resultado %}
+            <li>{{ libro.titulo}} by {{ libro.autor}}</li>
+            {% endfor %}
+    </ul>
+    {% endblock %}
